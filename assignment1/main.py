@@ -5,14 +5,14 @@ from string import ascii_lowercase
 from statistics import mean
 
 import matplotlib.pyplot as plt
-from helper_functions.file_reader import FileReader
+from helper_functions import FileHandler
 from wordcloud import WordCloud
 
 if __name__ == "__main__":
 
     print("Part 1.1 - Loading the file into a list of names")
     file_path = Path("./data/Navneliste.txt")
-    file_reader = FileReader(file_path)
+    file_reader = FileHandler(file_path)
     names = file_reader.read_file_with_split(",")
     print(f"Proof: \n{names}\n")
 

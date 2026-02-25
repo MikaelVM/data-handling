@@ -2,8 +2,8 @@
 from pathlib import Path
 
 
-class FileReader:
-    """Class to read a file and return its contents."""
+class FileHandler:
+    """Class to handle file reading and writing operations."""
 
     def __init__(self, file_path: Path):
         """Initialize the FileReader with the given file path.
@@ -34,3 +34,12 @@ class FileReader:
         """
         with open(self.file_path, 'r') as file:
             return file.read().split(delimiter)
+
+    def write_to_file(self, content: str) -> None:
+        """Write the given content to the file.
+
+        Args:
+            content (str): The content to be written to the file.
+        """
+        with open(self.file_path, 'w') as file:
+            file.write(content)
