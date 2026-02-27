@@ -19,3 +19,6 @@ wordcloud==1.9.6
 
 # Fake Data Generation
 Faker==40.5.1
+
+# Pretty Printing
+rich==14.3.3
