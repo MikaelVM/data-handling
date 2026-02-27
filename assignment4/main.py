@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 if __name__ == "__main__":
     path_to_data = Path("data/DKHousingPricesSample100k.csv")
 
+    print("Part 1 - Load the data into a pandas DataFrame and print the first 10 rows.")
     dataframe = pd.read_csv(path_to_data,
                             delimiter=',',
                             dtype={"date": "string",
@@ -33,13 +34,21 @@ if __name__ == "__main__":
 
     print(dataframe.head(10))
 
+    print("Part 2 - Calculate the average purchase price for each region and house type, and print the results.")
+
     print(dataframe.groupby("region")["purchase_price"].mean())
 
     print(dataframe.groupby("house_type")["purchase_price"].mean())
 
-    dataframe.groupby("region")["purchase_price"].mean().plot(kind="bar", title="Average purchase price by house type")
+    print("Part 3 - Visualize the average purchase price for each region and house type using Matplotlib.")
+    dataframe.groupby("region")["purchase_price"].mean().plot(
+        kind="bar",
+        title="Average purchase price by house type"
+    )
     plt.show()
 
-    dataframe.groupby("house_type")["purchase_price"].mean().plot(kind="bar", title="Average purchase price by house type")
+    dataframe.groupby("house_type")["purchase_price"].mean().plot(
+        kind="bar",
+        title="Average purchase price by house type"
+    )
     plt.show()
-

@@ -4,7 +4,7 @@ which I completed as part of a course at the Specialisterne Academy.
 
 ## Description
 
-# Getting Started
+## Getting Started
 ### Dependencies
 ### Installation
 ### Execution Solutions
