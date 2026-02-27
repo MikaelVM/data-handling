@@ -56,7 +56,3 @@ if __name__ == "__main__":
 
     names.sort()
     print(f"Proof: \nMedian: {median(names_len)}\nAverage: {mean(names_len)}\n")
-
-
-
-
