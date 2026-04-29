@@ -12,7 +12,7 @@ Create solutions to a series of assignments, each focused on a specific aspect o
 Do note for assignment 4, the file `assignment_4/data/write_protected.csv` needs to manually be set to read-only before running the `main.py` script, else the demonstration of handling write-protected files will not work as intended.
 
 ## Acknowledgements
-[![img.png](docs/Specialisterne%20Logo.jpg)](https://dk.specialisterne.com/)
+[<img src="docs/Specialisterne%20Logo.jpg" width="450">](https://dk.specialisterne.com/)
 
 This project was developed while I was participating in the Specialisterne Academy as part of the Data Management track 
 (February 2 to April 30, 2026).
