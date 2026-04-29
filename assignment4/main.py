@@ -1,8 +1,8 @@
-"""Solutions to assignment 4 - Theme Introduction to Pandas."""
-import pandas as pd
+"""Solutions to assignment 4 - Theme: Introduction to Pandas."""
 from pathlib import Path
-from matplotlib import pyplot as plt
 
+import pandas as pd
+from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
     path_to_data = Path("data/DKHousingPricesSample100k.csv")

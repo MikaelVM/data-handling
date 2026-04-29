@@ -1,6 +1,6 @@
 """Helper functions for the project."""
 
-from .file_handler import FileHandler
 from .fake_file_generator import FakeFileGenerator
+from .file_handler import FileHandler
 
-__all__ = ["FileHandler", "FakeFileGenerator"]
+__all__ = ["FakeFileGenerator", "FileHandler"]

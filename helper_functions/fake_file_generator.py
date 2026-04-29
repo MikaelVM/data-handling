@@ -1,30 +1,52 @@
-from faker import Faker
-from faker.providers import BaseProvider
+"""Module for generating fake movie data files in the CSV format."""
+
 import csv
 import random
 from datetime import datetime
-from  pathlib import Path
+from pathlib import Path
+
+from faker import Faker
+from faker.typing import SeedType
 from rich.progress import track
 
+
 class FakeFileGenerator:
-    def __init__(self, dir_path: Path, faker_seed=None):
+    """Class for generating fake movie data files in the CSV format.
+
+    Attributes:
+        dir_path (Path): The directory path where the generated file will be saved.
+        fake (Faker): An instance of the Faker class from the Faker library, used to generate fake data.
+    """
+
+    def __init__(self, dir_path: Path, faker_seed: SeedType = None) -> None:
+        """Initialize the FakeFileGenerator instance.
+
+        Args:
+            dir_path (Path): The directory path where the generated file will be saved.
+            faker_seed (int, optional): An optional seed value for the Faker instance to ensure reproducibility of the
+             generated data. Defaults to None.
+        """
         self.dir_path = dir_path
         self.fake = Faker()
         if faker_seed is not None:
             self.fake.seed_instance(faker_seed)
 
-
     def set_file_path(self, file_path: Path) -> None:
+        """Set the directory path for the FakeFileGenerator instance.
+
+        Args:
+            file_path (Path): The new directory path where the generated file will be saved.
+        """
         self.dir_path = file_path
 
     def generate_fake_movie_file(
             self,
             *,
-            num_lines=100,
+            num_lines: int = 100,
             file_name: str = 'fake_movie_data',
             append_to_file: bool = False
     ) -> None:
-        """Generates a csv file that simulates a series of movies.
+        """Generate a csv file that simulates a series of movies.
 
         The file will contain the following columns:
         - Title: The title of the movie
@@ -56,14 +78,13 @@ class FakeFileGenerator:
             if mode == 'w':
                 writer.writerow(['Title', 'Genre', 'Premiere', 'Runtime', 'IMDB Score', 'Language'])
 
-            for _ in track(range(num_lines), description= "Working..."):
+            for _ in track(range(num_lines), description="Working..."):
                 writer.writerow(self._generate_fake_movie_data())
 
         print(f"{datetime.now()}: File generation complete.")
 
     def _generate_fake_movie_data(self) -> list:
-        """Generates a single line of fake movie data."""
-
+        """Generate a single line of fake movie data."""
         title = self.fake.sentence(nb_words=3)
         genre = random.choice(['Documentary', 'Thriller', 'Mystery', 'Horror', 'Action', 'Comedy', 'Drama', 'Romance'])
         premiere = datetime.strftime(self.fake.date_time_this_decade(), '%B %d, %Y')

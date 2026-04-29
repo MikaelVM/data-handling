@@ -1,7 +1,8 @@
 """Solutions to assignment 3. - Theme: File handling and error management."""
 from pathlib import Path
-from helper_functions import FileHandler
+
 import pandas as pd
+from helper_functions import FileHandler
 
 
 if __name__ == "__main__":
@@ -40,4 +41,3 @@ if __name__ == "__main__":
         print(f"Permission denied, cannot write to file at {write_protected_file_path.absolute()}.")
     except Exception as e:
         print(f"An error occurred: {e}")
-
