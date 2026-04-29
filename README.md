@@ -7,9 +7,11 @@ Create solutions to a series of assignments, each focused on a specific aspect o
 
 # See the Solution in Action
 1. Install the required dependencies from the `requirements.txt` file.
-2. Navigate to any of the assignment folders (e.g., `assignment_1/`) and run the `main.py` script to see the solution in action.
+2. Navigate to any of the assignment folders (e.g., `assignment_1/`) and run the `main.py` script to see the solution
+in action.
 
-Do note for assignment 4, the file `assignment_4/data/write_protected.csv` needs to manually be set to read-only before running the `main.py` script, else the demonstration of handling write-protected files will not work as intended.
+Do note for assignment 4, the file `assignment_4/data/write_protected.csv` needs to manually be set to read-only before
+running the `main.py` script, else the demonstration of handling write-protected files will not work as intended.
 
 ## Acknowledgements
 [<img src="docs/Specialisterne%20Logo.jpg" width="450">](https://dk.specialisterne.com/)
